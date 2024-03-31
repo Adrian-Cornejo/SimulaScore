@@ -1,0 +1,2 @@
+# SimulaScore
+Proyecto Simulascore
