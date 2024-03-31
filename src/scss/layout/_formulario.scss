@@ -1,0 +1,90 @@
+// _formulario.scss
+.contenedor__formulario {
+    font-family: Arial, sans-serif;
+    background-color: $primarioOscuro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: $primarioOscuro;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #595d6f;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: $primario;
+}
+
+// _elementos.scss
+button {
+    width: 50%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: $secundario;
+    font-family: $fuentePrincipal;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: $secundarioOscuro;
+}
+
+// Aquí irían otros estilos para elementos específicos
+
+.contenedor__crearCuenta {
+    max-width: 50rem;
+    margin: 2rem auto;
+  
+    .login-container {
+      background-color: $primarioOscuro;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+  
+    }}
+  
+    
+
+.help-links a {
+    color: $secundario;
+    text-decoration: none;
+}
+
+.help-links a:hover {
+    text-decoration: underline;
+}
+    
+.box-eye{
+    position: relative;
+}
+
+.box-eye button{
+    border: none;
+    position: absolute;
+}
+.campo-doble {
+    display: flex;
+    justify-content: space-between; /* Asegura que los elementos se distribuyan */
+    gap: 10px; /* Espacio entre los campos de texto */
+}
+.contenedor__crearCuenta{
+    max-width: 50rem;
+    margin: 2rem auto;
+
+
+}

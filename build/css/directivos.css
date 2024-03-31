@@ -1,0 +1,436 @@
+:root{
+  --primario: #fbeadf;
+  --primarioOscuro: #e2c4b6;
+  --primarioFuerte: #d9b29f;
+  --secundario: #687483;
+  --secundarioOscuro: #5a6770;
+  --blanco: #fff;
+  --negro: #000;
+  --fuentePrincipal: 'Staatliches', cursive;
+
+ /* Complementary Colors */
+ --complementario1: #e1f3fb; /* A cool blue to complement the warm peach */
+ --complementario2: #addfe1; /* A softer blue for balance */
+
+ /* Analogous Colors */
+ --analogous1: #fbc9ae; /* A lighter peach */
+ --analogous2: #f9a785; /* A richer, deeper peach */
+
+ /* Triadic Colors */
+ --triad1: #adfbe3; /* A soft minty green */
+ --triad2: #e3adf9; /* A gentle lavender */
+
+ /* Secondary Colors */
+ --secundario: #687483; /* Provided secondary color */
+ --secundarioOscuro: #5a6770; /* Darker shade of the secondary color */
+
+ /* Neutral Colors */
+ --blanco: #fff; /* White */
+ --negro: #000; /* Black */
+
+ /* Additional Colors */
+ --additional1: #fae3cf; /* A soft orange */
+ --additional2: #aee1fb; /* A light sky blue */
+ --additional3: #fbaed4; /* A soft pink */
+}
+
+
+
+
+
+
+
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+  
+  body {
+    background-color: var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  p {
+    font-size: 1.8rem;
+    font-family: var(--fuentePrincipal);
+    color: var(--negro);
+    text-align: center;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  h1, h2, h3, h5{
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+  }
+  
+  h1 {
+    font-size: 4rem;
+  }
+  
+  h2 {
+    font-size: 3.2rem;
+  }
+  
+  h3 {
+    font-size: 2.4rem;
+  }
+  
+  
+  .footer {
+    background-color: var(--primarioOscuro);
+    padding: 1rem, 0;
+    margin: 0;
+  }
+  
+  .contenedor {
+    max-width: auto;
+    margin: auto;
+    
+  }
+  
+ 
+  
+  
+ 
+  /*Panel de control*/
+  .contenedorPerfil{
+  width: 35rem;
+  margin: auto;
+  
+  }
+
+  .card {
+    background-color: var(--additional1);
+    max-width: 35rem;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);  
+    /*margin: 2rem,auto;*/
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+  @media only screen and (min-width: 768px){
+    .contenedorPerfil{
+      width: 45rem;
+      margin: auto;
+      padding: 5rem;
+      }
+      .card{
+        max-width: 45rem;
+      }
+      
+  }
+  @media only screen and (min-width: 1440px){
+    .card {
+      margin:auto;
+  }
+  }
+
+
+
+
+.user-info {
+  text-align: end;
+  margin: auto;
+}
+
+.profile-img {
+  background-color: var(--blanco);
+  border-radius: 50%;
+  margin: auto;
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: scale-down;
+  border-style: dashed;
+}
+
+.student-name {
+  font-size: 20px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+
+
+.info-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+
+.card-header {
+  display: flex;
+  align-items: center;
+  
+}
+
+.card-header .icon {
+  margin-right: auto;
+}
+
+
+
+@media only screen and (min-width: 1440px){
+  .grid{
+   
+    display: grid;
+    grid-template-columns:repeat(3,1fr );
+    gap: 1rem;
+    
+  }
+  .segundaColumna{
+    grid-column: 2/4;
+    
+  }
+  .grid2columnas{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 5rem;
+  }
+  .card{
+    grid-column: 2/3;
+  }
+  .titulo{
+    grid-column: 3/4;
+  }
+   
+}
+
+/*Tabla docentes*/
+
+.tabla-docentes {
+    border-collapse: collapse;
+    margin: auto;
+    background-color: var(--blanco);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.tabla-docentes th, .tabla-docentes td {
+    border: 1px solid #e2c4b6;
+    padding: 8px;
+    text-align: center;
+}
+.tabla-docentes th {
+    background-color: var(--secundario);
+    color: var(--blanco);
+}
+.tabla-docentes tr:nth-child(even) {background-color: var(--primario);}
+.tabla-docentes tr:hover {background-color: var(--primarioOscuro);}
+
+.boton {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 5px;
+    cursor: pointer;
+    background-color: var(--secundario);
+    color: var(--blanco);
+    font-family: var(--fuentePrincipal);
+    font-size: 1.8rem;
+}
+
+.boton:hover{
+  background-color: var(--secundarioOscuro);
+}
+.card:hover {
+  background-color: #f5dac2; /* Nuevo color de fondo al hacer hover */
+  transform: translateY(-5px); /* Mueve la tarjeta hacia arriba */
+}
+.icon-tabler:hover {
+  animation: rotateIcon 3s infinite linear, changeColor 1s forwards;
+  
+}
+.icon:hover{
+  stroke: #000;
+}
+
+@keyframes rotateIcon {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes changeColor {
+  0% { stroke: var(--primarioOscuro); }
+  100% { stroke: #000; } 
+}
+
+.modal-container {
+  position: fixed; /* Cambiado a fixed para mejor comportamiento en modales */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex; /* Corregido a 'flex' */
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s;
+  background-color: rgba(0, 0, 0, 0.5); /* Opcional: Fondo oscuro semitransparente */
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: auto; /* O un ancho fijo o porcentaje según necesites */
+  max-width: 90%; /* Asegura que el modal no sea demasiado grande en pantallas grandes */
+  margin: 15px; /* Asegura un poco de margen alrededor del modal */
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+
+
+button {
+  font-size: 16px; /* Tamaño de fuente adecuado */
+  padding: 10px 20px; /* Espaciado interno para mejor legibilidad */
+  border: none; /* Remueve el borde predeterminado */
+  border-radius: 5px; /* Bordes redondeados para un look moderno */
+  cursor: pointer; /* Cursor de mano al pasar por encima */
+  
+  transition: background-color 0.3s, transform 0.3s; /* Transición suave para efectos */
+}
+/* Estilo para el botón Confirmar */
+#confirmBtn {
+  background-color: black; /* Verde, indica acción positiva */
+  color: white; /* Texto blanco para contraste */
+  margin-bottom: 1rem;
+}
+#cancelBtn {
+  background-color: #4187f8; /* Rojo, indica acción de cancelación o precaución */
+  color: white; /* Texto blanco para contraste */
+  
+}
+button:hover {
+  transform: translateY(-5px); /* Eleva el botón */
+}
+button:focus {
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.1); /* Sombra exterior suave */
+}
+
+
+/*Pagina perfil directivo*/
+.container {
+  max-width: 700px;
+  margin: auto;
+
+
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  margin: auto;
+  margin-top: 5rem;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+/* Contenedor de la imagen y el overlay */
+.image-upload-label {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  position: relative; /* Posicionamiento relativo para el overlay */
+  cursor: pointer;
+  margin-top: 2rem; /* Espacio en la parte superior, ajusta según sea necesario */
+}
+
+/* Estilo de la imagen de perfil */
+.profile-img {
+  width: 150px; /* Tamaño de la imagen, puede ajustarse */
+  height: 150px; /* Tamaño de la imagen, puede ajustarse */
+  border-radius: 50%; /* Redondea la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+  transition: opacity 0.3s ease; /* Transición suave para el efecto de opacidad */
+}
+
+/* Capa de superposición con el signo de más */
+.overlay {
+  position: absolute; /* Posicionamiento absoluto en relación con su contenedor relativo */
+  top: 0;
+  bottom: 0;
+  left: 130px;
+  right: 130px;
+  height: 150px; /* Tamaño del overlay para que coincida con la imagen */
+  width: 150px; /* Tamaño del overlay para que coincida con la imagen */
+  opacity: 0; /* Inicialmente transparente */
+  transition: opacity 0.3s ease; /* Transición suave para el efecto de opacidad */
+  background-color: rgba(0, 0, 0, 0.6); /* Color de fondo semitransparente */
+  border-radius: 50%; /* Redondea el overlay */
+  display: flex; /* Usa flexbox para centrar el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; /* Centra verticalmente el contenido */
+  font-size: 24px; /* Tamaño del signo de más */
+  color: white; /* Color del signo de más */
+}
+
+/* Efecto al pasar el cursor sobre el contenedor de la imagen */
+.image-upload-label:hover .overlay {
+  opacity: 1; /* Muestra el overlay */
+}
+
+.image-upload-label:hover .profile-img {
+  opacity: 0.3; /* Atenua la imagen */
+}
+
+
+
+
+

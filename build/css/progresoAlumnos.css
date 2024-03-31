@@ -1,0 +1,295 @@
+
+:root{
+  --primario: #fbeadf;
+  --primarioOscuro: #e2c4b6;
+  --primarioFuerte: #d9b29f;
+  --secundario: #687483;
+  --secundarioOscuro: #5a6770;
+  --blanco: #fff;
+  --negro: #000;
+  --fuentePrincipal: 'Staatliches', cursive;
+
+ /* Complementary Colors */
+ --complementario1: #e1f3fb; /* A cool blue to complement the warm peach */
+ --complementario2: #addfe1; /* A softer blue for balance */
+
+ /* Analogous Colors */
+ --analogous1: #fbc9ae; /* A lighter peach */
+ --analogous2: #f9a785; /* A richer, deeper peach */
+
+ /* Triadic Colors */
+ --triad1: #adfbe3; /* A soft minty green */
+ --triad2: #e3adf9; /* A gentle lavender */
+
+ /* Secondary Colors */
+ --secundario: #687483; /* Provided secondary color */
+ --secundarioOscuro: #5a6770; /* Darker shade of the secondary color */
+
+ /* Neutral Colors */
+ --blanco: #fff; /* White */
+ --negro: #000; /* Black */
+
+ /* Additional Colors */
+ --additional1: #fae3cf; /* A soft orange */
+ --additional2: #aee1fb; /* A light sky blue */
+ --additional3: #fbaed4; /* A soft pink */
+}
+#selector {
+    font-family: 'Staatliches', cursive; /* Fuente personalizada */
+    font-size: 1.7rem;
+    padding: 10px;
+    margin: 10px 10px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    -webkit-appearance: none; /* Remover estilo predeterminado en navegadores WebKit */
+    -moz-appearance: none; /* Remover estilo predeterminado en Firefox */
+    appearance: none; /* Estándar */
+}
+
+/* Flecha desplegable personalizada */
+#selector {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23000" d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 20px top 50%;
+    background-size: 12px;
+}
+.puntaje-bajo {
+    /* background-color: #black; /* Color de fondo rojo claro */
+     color:red;
+     font-size:1.5rem;
+     
+   
+   }
+
+   @media only screen and (min-width: 1440px){
+      .grid2columnas{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+       
+      }
+
+}
+
+   .containerGrafica {
+    
+    max-width: 650px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    
+    margin-top: 5rem;
+  }
+
+
+  .graficas{
+    max-width: 650px;
+    max-height: fit-content;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 5rem;
+    background: #fff;
+    
+   
+  }
+  .descripcion {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f0f0f0; /* Un fondo sutil para destacar el área de descripción */
+    border-left: 5px solid #007bff; /* Una línea a la izquierda para llamar la atención */
+    
+    font-size: 16px; /* Un tamaño de fuente adecuado para la lectura */
+    color: #333; /* Un color de texto que contraste bien con el fondo */
+    border-radius: 5px; /* Bordes redondeados para suavizar la apariencia */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Una sombra sutil para añadir profundidad */
+}
+
+.descripcion p {
+    margin: 0; /* Remover el margen por defecto de los párrafos para controlar el espaciado */
+    line-height: 1.6; /* Un interlineado que mejora la legibilidad del texto */
+    font-family: 'Arial', sans-serif; /* Asegúrate de usar una fuente legible */
+}
+
+#busqueda {
+  width: 400px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin: auto;
+}
+#resultados {
+  width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: var(--primarioOscuro) ;
+}
+#resultados ul {
+  padding: 0;
+  list-style: none;
+}
+#resultados li {
+  padding: 5px;
+  cursor: pointer;
+}
+#resultados li:hover {
+  background-color: var(--primarioFuerte);
+}
+.contenedor{
+  max-width: 450px;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+
+.examSection{
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 5rem;
+  border-radius: 5px;
+}
+
+.question{
+
+  margin-top: 3rem;
+  text-align: left;
+ }
+ 
+   .question {
+     font-size: 20px;
+     font-family:Arial, Helvetica, sans-serif ;
+   }
+   
+   .answers-section {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 10px;
+ 
+     
+   }
+ 
+   
+   .answer {
+     max-width: 90%;
+     display: flex;
+     align-items: center;
+     background-color: #f9f9f9;
+     border: 2px solid #ddd;
+     padding: 10px 20px;
+     font-size: 16px;
+     border-radius: 5px;
+     cursor: pointer;
+     border-style: dashed;
+     font-family: Arial, Helvetica, sans-serif;
+   }
+   .resp{
+     max-width: 90%;
+     display: flex;
+     align-items: center;
+     background-color: #f9f9f9;
+     border: 2px solid #ddd;
+     padding: 10px 20px;
+     font-size: 16px;
+     border-radius: 5px;
+     cursor: pointer;
+     border-style: dashed;
+   }
+   
+   .answer input[type="checkbox"] {
+     margin-right: 10px;
+   }
+   
+   .answer:hover {
+     background-color: #e9e9e9;
+   }
+   
+ 
+ .option {
+     width: 2.5rem; 
+     height: 2.5rem; 
+     border-radius:  50%; 
+     border: 2px solid #d1d5db; 
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     
+     cursor: pointer;
+ }
+ 
+ 
+ .exam-section{
+   width: 100%;
+   
+   margin: auto;
+   margin-top: 4rem;
+   margin-bottom: 2rem;
+   background: white;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   
+ }
+ .answer-sheet-section{
+  
+   
+   
+   margin-top: 2rem;
+   background: white;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ 
+ } 
+ 
+ .additional-text{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5rem;
+ }
+   
+   .option.selected {
+     background-color: black; /* Color de fondo para indicar selección */
+     /* Otros estilos como cambio de color de texto, bordes, etc. */
+   }
+   @media only screen and (min-width: 768px){
+     .container {
+      
+     
+       
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+       display: grid;
+       grid-template-columns: 3fr 1fr; /* Crea dos columnas de igual tamaño */
+       gap: 20px; /* Espacio entre las columnas */
+       
+     }
+     .answer-sheet-section{
+       max-width: 100%;
+       margin-top: 0;
+       padding: 50PX;
+     
+     
+     }
+   }
+   
+   .answer-sheet-section {
+     position: sticky;
+     top: 0; 
+     height: 100vh; 
+     overflow-y: scroll; 
+   }
+
+   
+
+
+
+  
+  
+   

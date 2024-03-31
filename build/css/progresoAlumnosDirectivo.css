@@ -1,0 +1,51 @@
+:root{
+    --primario: #fbeadf;
+    --primarioOscuro: #e2c4b6;
+    --primarioFuerte: #d9b29f;
+    --secundario: #687483;
+    --secundarioOscuro: #5a6770;
+    --blanco: #fff;
+    --negro: #000;
+    --fuentePrincipal: 'Staatliches', cursive;
+  
+   /* Complementary Colors */
+   --complementario1: #e1f3fb; /* A cool blue to complement the warm peach */
+   --complementario2: #addfe1; /* A softer blue for balance */
+  
+   /* Analogous Colors */
+
+  }
+  
+    .seccion-profesor {
+        max-width: 50%;
+        margin: auto;
+        margin-bottom: 40px; /* Espacio entre secciones de profesores */
+        background-color: var(--primarioOscuro);
+        border: 1px solid #ccc; /* Borde ligero para cada sección */
+        padding: 20px; /* Espacio interno para no pegar el contenido al borde */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra suave para darle profundidad */
+        border-radius: 15px;
+    }
+    #selector {
+        font-family: 'Staatliches', cursive; /* Fuente personalizada */
+        font-size: 1.7rem;
+        padding: 10px;
+        width: 20%;
+        margin: 10px 10px;
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        cursor: pointer;
+        -webkit-appearance: none; /* Remover estilo predeterminado en navegadores WebKit */
+        -moz-appearance: none; /* Remover estilo predeterminado en Firefox */
+        appearance: none; /* Estándar */
+    }
+    
+    /* Flecha desplegable personalizada */
+    #selector {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23000" d="M7 10l5 5 5-5z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 20px top 50%;
+        background-size: 12px;
+    }

@@ -1,0 +1,105 @@
+:root{
+    --primario: #fbeadf;
+    --primarioOscuro: #e2c4b6;
+    --primarioFuerte: #d9b29f;
+    --secundario: #687483;
+    --secundarioOscuro: #5a6770;
+    --blanco: #fff;
+    --negro: #000;
+    --fuentePrincipal: 'Staatliches', cursive;
+  
+   /* Complementary Colors */
+   --complementario1: #e1f3fb; /* A cool blue to complement the warm peach */
+   --complementario2: #addfe1; /* A softer blue for balance */
+  
+   /* Analogous Colors */
+   --analogous1: #fbc9ae; /* A lighter peach */
+   --analogous2: #f9a785; /* A richer, deeper peach */
+  
+   /* Triadic Colors */
+   --triad1: #adfbe3; /* A soft minty green */
+   --triad2: #e3adf9; /* A gentle lavender */
+  
+   /* Secondary Colors */
+   --secundario: #687483; /* Provided secondary color */
+   --secundarioOscuro: #5a6770; /* Darker shade of the secondary color */
+  
+   /* Neutral Colors */
+   --blanco: #fff; /* White */
+   --negro: #000; /* Black */
+  
+   /* Additional Colors */
+   --additional1: #fae3cf; /* A soft orange */
+   --additional2: #aee1fb; /* A light sky blue */
+   --additional3: #fbaed4; /* A soft pink */
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+    }
+    
+    body {
+      background-color: var(--primario);
+      font-size: 1.6rem;
+      line-height: 1.5;
+      
+    }
+    
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    
+    p {
+      font-size: 1.8rem;
+      font-family: var(--fuentePrincipal);
+      color: var(--negro);
+      text-align: center;
+    }
+    
+    a {
+      text-decoration: none;
+    }
+    
+    img {
+      width: 100%;
+    }
+    
+    h1, h2, h3, h5{
+      text-align: center;
+      color: var(--secundario);
+      font-family: var(--fuentePrincipal);
+    }
+    
+    h1 {
+      font-size: 4rem;
+    }
+    
+    h2 {
+      font-size: 3.2rem;
+    }
+    
+    h3 {
+      font-size: 2.4rem;
+    }
+  
+    .seccion--imagen{
+        width: 250px; 
+        position:absolute; 
+        padding:1rem;
+        top: 100px;
+    }
+
+    @media only screen and (min-width: 1440px){
+       .seccion--imagen{
+        top: 60%;
+        left: 25%;
+       }
+    }

@@ -1,0 +1,50 @@
+// _globales.scss
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    background-color: $primario;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: $negro;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: $secundario;
+    font-family: $fuentePrincipal;
+}
+
+h1 { font-size: 4rem; }
+h2 { font-size: 3.2rem; }
+h3 { font-size: 2.4rem; }
+
+
+//footer
+.footer{
+    background-color:  $primarioOscuro;
+    padding: 1rem,0;
+    margin: 0;
+
+
+}

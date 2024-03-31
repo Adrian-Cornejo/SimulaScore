@@ -1,0 +1,111 @@
+// _contenedores.scss
+.contenedor {
+    max-width: 50rem;
+    margin: 2rem auto;
+}
+
+.contenedor__informacion, .contenedor__crearCuenta, .contenedor-botones {
+    max-width: 90rem;
+    margin: 2rem auto;
+}
+.contenedor__crearCuenta{
+    max-width: 50rem;
+    margin: 2rem auto;
+
+
+}
+.contenedor__iformacion{
+    max-width: 90rem;
+    margin: 2rem auto;
+    
+}
+.contenedor__iformacion p{
+    text-align: justify;
+    margin: 0 1rem;
+
+}
+
+.contenedor__informacion p {
+    text-align: justify;
+    margin: 0 1rem;
+}
+
+// _navegacion.scss
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo {
+    margin: 0;
+    width: 250px;
+    height: 250px;
+}
+
+
+
+.navegacion__enlace {
+    display: block;
+    color: $blanco;
+    font-family: $fuentePrincipal;
+    font-size: 3rem;
+}
+.navegacion {
+    background-color: $primarioOscuro;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+
+    &__enlace {
+        display: block;
+        color: $blanco;
+        font-family: $fuentePrincipal;
+        font-size: 3rem;
+
+        &:hover, &--activo {
+            color: $secundario;
+        }
+    }
+}
+
+
+// Agrega los media queries relevantes aquí
+
+@media only screen and (min-width: 768px){
+    .navegacion{
+       padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        justify-content: center;
+        
+    }
+    .navegacion__enlace{
+        margin: auto;
+        }
+    
+}
+@media only screen and (min-width: 1440px){
+    .navegacion__enlace{
+        margin: auto 2rem;
+        }
+}
+@media only screen and (min-width:768px ){
+    .botones-acceso{
+        display: flex;
+        
+        flex-direction: row;  
+    }
+   
+   
+}
+@media only screen and (min-width: 1440px){
+    .boton-acceso{
+        padding: 3rem 10rem;
+    }
+    .botones-acceso{
+        gap: 2rem;
+    }
+}
