@@ -161,7 +161,9 @@ $resultadosMayorPorAlumno = $con->query($sqlUltimoIntentoPorAlumno)->fetchAll(PD
 
 
 <main>
+
 <h2>Progreso de los Alumnos</h2>
+
 <select id="selector">
         <option value="clasificacionAlumnos">Clasificacion de Alumnos</option>
         <option value="resultadosUltimo">Resultados del ultimo intento</option>
@@ -173,7 +175,7 @@ $resultadosMayorPorAlumno = $con->query($sqlUltimoIntentoPorAlumno)->fetchAll(PD
         <option value="resultadosMateriasGeneral">Resultados por materias general</option>
         
     </select>
-
+    <a href="../../generarPDF/pdfGrupo.php" target="_blank" class="boton-descarga">Descargar PDF</a>
 
 
 <div id="clasificacionAlumnos" class="contenido" >
@@ -839,6 +841,10 @@ document.getElementById('selector').addEventListener('change', function() {
         seleccionado.style.display = 'grid';
     }
 });
+
+
+
+
 
 </script>
 
