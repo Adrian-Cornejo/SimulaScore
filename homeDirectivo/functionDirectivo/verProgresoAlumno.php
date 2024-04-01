@@ -217,6 +217,9 @@ foreach ($resultadosExamen as $resultado) {
         <option value="tablaComparativa">Tabla  </option>
         
     </select>
+    <a href="../../generarPDF/pdfAlumnoDirectivo.php?codigoAlumno=<?php echo urlencode($codigoAlumno); ?>" target="_blank" class="boton-descarga">Descargar PDF</a>
+
+
 
     <div id="myModal" class="modal">
   <div class="modal-content">

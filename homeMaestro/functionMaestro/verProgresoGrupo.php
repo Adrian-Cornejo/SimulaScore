@@ -577,12 +577,15 @@ $dataJson = json_encode($data);
 </div>
 </div>
 
+<a href="#" id="enviarGraficas">Enviar Gráficas al Servidor</a>
 
 
 
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
 </main>
 
@@ -842,6 +845,35 @@ document.getElementById('selector').addEventListener('change', function() {
     }
 });
 
+
+$(document).ready(function(){
+    $('#enviarGraficas').click(function(e){
+        e.preventDefault(); // Previene la acción por defecto del enlace
+        enviarImagenesBase64(); // Llama a tu función de envío
+    });
+});
+
+function enviarImagenesBase64() {
+    // El contenido de tu función como se describió anteriormente
+    var imageData1 = graficaPromedioGeneral.toBase64Image();
+    var imageData2 = graficaMaterias.toBase64Image();
+
+    var imagenes = {
+        'grafica1': imageData1,
+        'grafica2': imageData2
+    };
+
+    $.ajax({
+        type: "POST",
+        url: "../../generarPDF/guardarImagenes.php",
+        data: {
+            'imagenes': imagenes
+        },
+        success: function(response) {
+            console.log("Imágenes enviadas y guardadas correctamente", response);
+        }
+    });
+}
 
 
 

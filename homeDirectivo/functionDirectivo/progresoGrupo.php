@@ -161,6 +161,7 @@ $resultadosMayorPorAlumno = $con->query($sqlUltimoIntentoPorAlumno)->fetchAll(PD
         <option value="resultadosMateriasGeneral">Resultados por materias general</option>
         
     </select>
+    <a href="../../generarPDF/pdfGrupoDirectivo.php?codigoProfesor=<?php echo urlencode($codigoMaestro); ?>" target="_blank" class="boton-descarga">Descargar PDF</a>
 
 
 

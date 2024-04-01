@@ -1,9 +1,9 @@
 <?php
-session_start();
-if (!isset($_SESSION['Maestro'])) {
-    header('Location: ../loginMaestro.php');
-    exit;
-}
+    session_start();
+    if (!isset($_SESSION['correo'])) {
+      header('Location:../loginDirectivo.php'); // Redirigir al login si no está logueado
+      exit;
+  }
 require_once '../librerias/tcpdf.php'; // Asegúrate de ajustar la ruta al directorio de TCPDF
 require '../config/db.php';
 
@@ -12,16 +12,21 @@ require '../config/db.php';
 $db = new db();
 $con =$db->conexion();
 
-//Obtener el codigo del maestro en base a su correo
-$correoMaestro = $_SESSION['Maestro'];
+if (isset($_GET['codigoProfesor'])) {
+   $codigoProfesor = $_GET['codigoProfesor'];
 
-$sqlHelp = $con->prepare("SELECT codigoProfesor, nombre, apellido FROM profesor WHERE correo = :correoMaestro");
-$sqlHelp->bindParam(':correoMaestro', $correoMaestro, PDO::PARAM_STR);
+    
+}
+
+
+$sqlHelp = $con->prepare("SELECT codigoProfesor,correo, nombre, apellido FROM profesor WHERE codigoProfesor = :codigoProfesor");
+$sqlHelp->bindParam(':codigoProfesor', $codigoProfesor, PDO::PARAM_STR);
 $sqlHelp->execute();
 $resultadoaux = $sqlHelp->fetchAll(PDO::FETCH_ASSOC);
 $codigoMaestro = $resultadoaux[0]['codigoProfesor'];
 $nombreMaestro = $resultadoaux[0]['nombre'];
 $apellidoMaestro   = $resultadoaux[0]['apellido'];
+$correoMaestro   = $resultadoaux[0]['correo'];
 
 
 

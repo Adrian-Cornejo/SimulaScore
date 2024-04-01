@@ -62,7 +62,49 @@ $calEspañol=($promedioEspanol+$promedioComprension)/2;
 $calMatematicas=($promedioMatematicas+$promedioFracciones)/2;
 $calFCE=$promedioFCE;
 
+// Inicializa sumadores y contadores para los promedios
+$sumaEspanol = 0;
+$sumaMatematicas = 0;
+$sumaFCE = 0;
+$contadorEspanol = 0;
+$contadorMatematicas = 0;
+$contadorFCE = 0;
+$contador=0;
+$sumaTotal=0;
+$promedioGeneral=0;
+
+// Cuenta el número de intentos obtenidos y suma las calificaciones
+foreach ($resultadosExamen as $resultado) {
+    $sumaEspanol += $resultado['calificacionEspanol'];
+    $sumaMatematicas += $resultado['calificacionMatematicas'];
+    $sumaFCE += $resultado['calificacionFce'];
+    $sumaTotal+= $resultado['puntaje_general'];
+    $contador++;
+    $contadorEspanol++;
+    $contadorMatematicas++;
+    $contadorFCE++;
+}
+
+// Calcula los promedios
+$promedioEspanol = $contadorEspanol > 0 ? $sumaEspanol / $contadorEspanol : 0;
+$promedioMatematicas = $contadorMatematicas > 0 ? $sumaMatematicas / $contadorMatematicas : 0;
+$promedioFCE = $contadorFCE > 0 ? $sumaFCE / $contadorFCE : 0;
+$promedioGeneral = $contador > 0 ? $sumaTotal / $contador : 0;
+
+$ultimaCalEspanol = 0;
+$ultimaCalMatematicas = 0;
+$ultimaCalFCE = 0;
+
+// Recorre los resultados para encontrar la última calificación de cada materia
+foreach ($resultadosExamen as $resultado) {
+    $ultimaCalEspanol = $resultado['calificacionEspanol'];
+    $ultimaCalMatematicas = $resultado['calificacionMatematicas'];
+    $ultimaCalFCE = $resultado['calificacionFce'];
+    // Asumiendo que el último elemento ya tiene las últimas calificaciones
+}
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -176,48 +218,7 @@ $calFCE=$promedioFCE;
       <span style ="margin:auto; font-size:2rem" class="value">Escuela:<?php echo htmlspecialchars($row['escuela']); ?></span>
     </div>
   <?php } ?>
-<?php
-// Inicializa sumadores y contadores para los promedios
-$sumaEspanol = 0;
-$sumaMatematicas = 0;
-$sumaFCE = 0;
-$contadorEspanol = 0;
-$contadorMatematicas = 0;
-$contadorFCE = 0;
-$contador=0;
-$sumaTotal=0;
-$promedioGeneral=0;
 
-// Cuenta el número de intentos obtenidos y suma las calificaciones
-foreach ($resultadosExamen as $resultado) {
-    $sumaEspanol += $resultado['calificacionEspanol'];
-    $sumaMatematicas += $resultado['calificacionMatematicas'];
-    $sumaFCE += $resultado['calificacionFce'];
-    $sumaTotal+= $resultado['puntaje_general'];
-    $contador++;
-    $contadorEspanol++;
-    $contadorMatematicas++;
-    $contadorFCE++;
-}
-
-// Calcula los promedios
-$promedioEspanol = $contadorEspanol > 0 ? $sumaEspanol / $contadorEspanol : 0;
-$promedioMatematicas = $contadorMatematicas > 0 ? $sumaMatematicas / $contadorMatematicas : 0;
-$promedioFCE = $contadorFCE > 0 ? $sumaFCE / $contadorFCE : 0;
-$promedioGeneral = $contador > 0 ? $sumaTotal / $contador : 0;
-
-$ultimaCalEspanol = 0;
-$ultimaCalMatematicas = 0;
-$ultimaCalFCE = 0;
-
-// Recorre los resultados para encontrar la última calificación de cada materia
-foreach ($resultadosExamen as $resultado) {
-    $ultimaCalEspanol = $resultado['calificacionEspanol'];
-    $ultimaCalMatematicas = $resultado['calificacionMatematicas'];
-    $ultimaCalFCE = $resultado['calificacionFce'];
-    // Asumiendo que el último elemento ya tiene las últimas calificaciones
-}
-?>
     <select id="selector">
         <option value="rendimientoGeneral">Rendimiento General</option>
         <option value="tablaEspanol">Tabla y Gráfico de Progresión de Español</option>
@@ -226,7 +227,9 @@ foreach ($resultadosExamen as $resultado) {
         <option value="tablaComparativa">Tabla  </option>
         
     </select>
+    <a href="../../generarPDF/pdfAlumno.php?codigoAlumno=<?php echo urlencode($codigoAlumno); ?>" target="_blank" class="boton-descarga">Descargar PDF</a>
 
+ 
     <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
