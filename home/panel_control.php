@@ -169,7 +169,7 @@
 
             <div> <!--Contenedor card-->
             <div class="card"> <!--Incio card-->
-                <a href="#">
+                <a href="../examenOlimpiada/idicacionesExamenOlimpiada.php">
                 <div class="card">
                     <div class="card-header">
                         <i class="fas fa-book-open icon">
@@ -179,7 +179,7 @@
                             <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
                             </svg>    
                         </i>
-                        <p>Funcion pendiente</p>
+                        <p>Examen Olimpiada del conocimiento</p>
                     </div>
                         <p class="card-content"></p>
                 </div>
