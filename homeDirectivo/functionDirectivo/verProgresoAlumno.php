@@ -590,26 +590,31 @@ document.getElementById('selector').addEventListener('change', function() {
 function descargarPDF() {
     const doc = new jspdf.jsPDF();
     const imgDataProgreso = document.getElementById('progresoHistorico').toDataURL('image/png');
-    const imgDataEspComp = document.getElementById('graficaEspComp').toDataURL('image/png');
-    const imgDataMate = document.getElementById('graficaMate').toDataURL('image/png');
-    const imgDataFce = document.getElementById('graficaFce').toDataURL('image/png');
-    const imgDataComparacion = document.getElementById('comparacionPorMateria').toDataURL('image/png');
-    
-    // Aquí agregas el texto, como títulos o descripciones
+    // Continúa con la preparación de datos de imagen...
+
+    // Agregar texto
     doc.text('Reporte de Progreso del Alumno', 10, 10);
-
-    // Ejemplo de cómo agregar un gráfico al PDF
+    // Agrega tus gráficos como antes
     doc.addImage(imgDataProgreso, 'PNG', 10, 20, 180, 100);
-
-    // Puedes agregar más imágenes de la misma manera
     doc.addPage();
-    doc.addImage(imgDataEspComp, 'PNG', 10, 20, 180, 100);
+    // Continúa con tus imágenes...
 
-    // Continúa con los demás gráficos...
+    // Ejemplo de agregar una tabla (asegúrate de que el plugin jsPDF-AutoTable está incluido)
+    const head = [['ID', 'Nombre', 'Asignatura', 'Calificación']];
+    const body = [
+        [1, 'Juan Pérez', 'Matemáticas', 'A'],
+        // Más filas...
+    ];
+    doc.autoTable({
+        head: head,
+        body: body,
+        startY: 150, // Ajusta según sea necesario
+    });
 
     // Finalmente, guarda el PDF
     doc.save('reporte-completo.pdf');
 }
+
 
  
 $(document).ready(function() {

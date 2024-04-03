@@ -395,11 +395,13 @@ $htmlTablaResultadosFCE .= <<<EOD
     </tbody>
 </table>
 EOD;
-
+$ruta ='C:\\xampp\\tmp\\imagenesgrafica1_660b7ea608325.png';
 
 $pdf->writeHTML($htmlContent1, true, false, true, false, '');
 $pdf->writeHTML($htmlContent, true, false, true, false, '');
 $pdf->writeHTML($htmlTable, true, false, true, false, '');
+$pdf->Image($ruta, '', '', 150,0 , 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+
 
 $pdf->AddPage();
 $pdf->writeHTML($descripcionTablaPromedioGeneral, true, false, true, false, '');
@@ -417,6 +419,8 @@ $pdf->writeHTML($htmlTablaResultadosMatematicas, true, false, true, false, '');
 $pdf->AddPage();
 $pdf->writeHTML($descripcionTablaResultadosFce, true, false, true, false, '');
 $pdf->writeHTML($htmlTablaResultadosFCE, true, false, true, false, '');
+
+
 
 // Cierra y envía el documento PDF
 $pdf->Output('Reporte por grupo.pdf', 'I');

@@ -22,8 +22,9 @@ if (isset($_POST['imagenes'])) {
     }
 
     // Devolver las rutas de las imágenes guardadas como respuesta
-    echo json_encode($rutas);
+   echo json_encode($rutas);
 } else {
     echo "No se recibieron imágenes.";
+    
 }
 ?>
