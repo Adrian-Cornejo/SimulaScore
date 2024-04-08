@@ -1,5 +1,5 @@
 <?php
-    require_once("c://xampp/htdocs/Proyecto/controller/homeController.php");
+    require_once("../controller/homeController.php");
 
     session_start();
     $obj = new homeController();

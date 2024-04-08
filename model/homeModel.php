@@ -4,7 +4,7 @@
         private $PDO;
         public function __construct()
         {
-            require_once("c://xampp/htdocs/Proyecto/config/db.php");
+            require_once("../config/db.php");
             $pdo = new db();
             $this->PDO = $pdo->conexion();
         }
@@ -84,9 +84,7 @@
             } catch (PDOException $e) {
                 
                 return false;
-            }
-
-           
+            } 
         }
 
         public function obtenerclaveMaestro($correo){
@@ -94,8 +92,6 @@
             $statement->bindParam(":correo",$correo);
             return ($statement->execute()) ? $statement->fetch()['password'] : false;
         }
-       
-       
     }
 
 ?>

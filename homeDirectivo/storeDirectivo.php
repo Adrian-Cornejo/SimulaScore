@@ -1,7 +1,8 @@
 <?php
-    require_once("c://xampp/htdocs/Proyecto/controller/homeController.php");
-    require_once("c://xampp/htdocs/Proyecto/homeDirectivo/codigo.php");
-    
+    require_once("../controller/homeController.php");
+
+
+    require_once("../homeDirectivo/codigo.php");
 
     $obj = new homeController();
 

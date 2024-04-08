@@ -1,5 +1,5 @@
 <?php
-require_once("c://xampp/htdocs/Proyecto/model/homeModel.php");
+require_once("../model/homeModel.php");
 
 class homeController {
     private $MODEL;

@@ -165,6 +165,26 @@ $calificacionGeografia = $puntajeGeografia;
 // echo "Calificación Geografía: $calificacionGeografia\n";
 // echo "Puntaje General del Examen: $puntaje\n";
 
+// Asumiendo que ya tienes estas variables definidas con los resultados de evaluarRespuestas()
+// Para Matemáticas
+$totalPreguntasMatematicas = $resultadosMatematicas['totalPreguntas'];
+$totalPreguntasCorrectasMatematicas = $resultadosMatematicas['respuestasCorrectas'];
+
+// Para Español
+$totalPreguntasEspanol = $resultadosEspanol['totalPreguntas'];
+$totalPreguntasCorrectasEspanol = $resultadosEspanol['respuestasCorrectas'];
+
+// Para Historia
+$totalPreguntasHistoria = $resultadosHistoria['totalPreguntas'];
+$totalPreguntasCorrectasHistoria = $resultadosHistoria['respuestasCorrectas'];
+
+// Para Ciencias Naturales
+$totalPreguntasCienciasNaturales = $resultadosCienciasNaturales['totalPreguntas'];
+$totalPreguntasCorrectasCienciasNaturales = $resultadosCienciasNaturales['respuestasCorrectas'];
+
+// Para Geografía
+$totalPreguntasGeografia = $resultadosGeografia['totalPreguntas'];
+$totalPreguntasCorrectasGeografia = $resultadosGeografia['respuestasCorrectas'];
 
 
 //print_r($respuestasUsuario);
@@ -172,15 +192,13 @@ $calificacionGeografia = $puntajeGeografia;
 $RespuestasJson = json_encode($respuestasUsuario);
 $totalPreguntasCorrectas;
 
-function guardarResultadosExamenOlimpiada($con, $codigoAlumno, $puntajeGeneral, $totalPreguntas, $correctasGeneral, $calificacionMatematicas, $calificacionEspanol, $calificacionHistoria, $calificacionCiencias, $calificacionGeografia, $RespuestasJson) {
+function guardarResultadosExamenOlimpiada($con, $codigoAlu, $puntaje, $totalPreguntas, $correctasGeneral, $calificacionMatematicas, $calificacionEspanol, $calificacionHistoria, $calificacionCiencias, $calificacionGeografia, $totalPreguntasMatematicas, $correctasMatematicas, $totalPreguntasEspanol, $correctasEspanol, $totalPreguntasHistoria, $correctasHistoria, $totalPreguntasCiencias, $correctasCiencias, $totalPreguntasGeografia, $correctasGeografia, $RespuestasJson, $idExamen) {
     $fecha = date('Y-m-d');
-     try {
-        // Preparar la consulta de inserción
-        $statement = $con->prepare("UPDATE resultados_examen_olimpiada SET fecha = :fecha, puntaje_general = :puntaje_general, total_preguntas = :total_preguntas, correctas_general = :correctas_general, calificacionMatematicas = :calificacionMatematicas, calificacionEspanol = :calificacionEspanol, calificacionHistoria = :calificacionHistoria, calificacionCiencias = :calificacionCiencias, calificacionGeografia = :calificacionGeografia, respuestas = :respuestas, en_progreso = 0 WHERE id = :idExamen");
+    try {
+        $statement = $con->prepare("UPDATE resultados_examen_olimpiada SET fecha = :fecha, puntaje_general = :puntaje_general, total_preguntas = :total_preguntas, correctas_general = :correctas_general, calificacionMatematicas = :calificacionMatematicas, calificacionEspanol = :calificacionEspanol, calificacionHistoria = :calificacionHistoria, calificacionCiencias = :calificacionCiencias, calificacionGeografia = :calificacionGeografia, totalPreguntasMatematicas = :totalPreguntasMatematicas, correctasMatematicas = :correctasMatematicas, totalPreguntasEspanol = :totalPreguntasEspanol, correctasEspanol = :correctasEspanol, totalPreguntasHistoria = :totalPreguntasHistoria, correctasHistoria = :correctasHistoria, totalPreguntasCiencias = :totalPreguntasCiencias, correctasCiencias = :correctasCiencias, totalPreguntasGeografia = :totalPreguntasGeografia, correctasGeografia = :correctasGeografia, respuestas = :respuestas, en_progreso = 0 WHERE id = :idExamen");
 
-        // Vincular los parámetros a la consulta
         $statement->bindParam(":fecha", $fecha);
-        $statement->bindParam(":puntaje_general", $puntajeGeneral);
+        $statement->bindParam(":puntaje_general", $puntaje);
         $statement->bindParam(":total_preguntas", $totalPreguntas);
         $statement->bindParam(":correctas_general", $correctasGeneral);
         $statement->bindParam(":calificacionMatematicas", $calificacionMatematicas);
@@ -188,22 +206,29 @@ function guardarResultadosExamenOlimpiada($con, $codigoAlumno, $puntajeGeneral, 
         $statement->bindParam(":calificacionHistoria", $calificacionHistoria);
         $statement->bindParam(":calificacionCiencias", $calificacionCiencias);
         $statement->bindParam(":calificacionGeografia", $calificacionGeografia);
+        $statement->bindParam(":totalPreguntasMatematicas", $totalPreguntasMatematicas);
+        $statement->bindParam(":correctasMatematicas", $correctasMatematicas);
+        $statement->bindParam(":totalPreguntasEspanol", $totalPreguntasEspanol);
+        $statement->bindParam(":correctasEspanol", $correctasEspanol);
+        $statement->bindParam(":totalPreguntasHistoria", $totalPreguntasHistoria);
+        $statement->bindParam(":correctasHistoria", $correctasHistoria);
+        $statement->bindParam(":totalPreguntasCiencias", $totalPreguntasCiencias);
+        $statement->bindParam(":correctasCiencias", $correctasCiencias);
+        $statement->bindParam(":totalPreguntasGeografia", $totalPreguntasGeografia);
+        $statement->bindParam(":correctasGeografia", $correctasGeografia);
         $statement->bindParam(":respuestas", $RespuestasJson);
-        $statement->bindParam(":idExamen", $idExamen);
+        $statement->bindParam(":idExamen", $idExamen, PDO::PARAM_INT);
 
-        // Ejecutar la consulta
         $statement->execute();
         return true;
-        return true;
-     } catch (Exception $e) {
-        
-         error_log("Error al insertar en la base de datos: " . $e->getMessage());
-         return false;
-     }
+    } catch (Exception $e) {
+        error_log("Error al insertar en la base de datos: " . $e->getMessage());
+        return false;
+    }
 }
 
 
-$resultado = guardarResultadosExamenOlimpiada($con, $codigoAlu, $puntaje, $totalPreguntas, $totalPreguntasCorrectas, $calificacionMatematicas, $calificacionEspanol, $calificacionHistoria, $calificacionCienciasNaturales, $calificacionGeografia, $RespuestasJson);
+$resultado = guardarResultadosExamenOlimpiada($con, $codigoAlu, $puntaje, $totalPreguntas, $totalPreguntasCorrectas, $calificacionMatematicas, $calificacionEspanol, $calificacionHistoria, $calificacionCienciasNaturales, $calificacionGeografia, $totalPreguntasMatematicas, $totalPreguntasCorrectasMatematicas, $totalPreguntasEspanol, $totalPreguntasCorrectasEspanol, $totalPreguntasHistoria, $totalPreguntasCorrectasHistoria, $totalPreguntasCienciasNaturales, $totalPreguntasCorrectasCienciasNaturales, $totalPreguntasGeografia, $totalPreguntasCorrectasGeografia, $RespuestasJson, $ultimoIdInsertado);
 echo $totalPreguntasCorrectas;
 if ($resultado) {
     // Redirigir a mostrarResultados.php si la inserción fue exitosa

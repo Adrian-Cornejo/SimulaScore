@@ -1,7 +1,7 @@
 <?php
-    require_once("c://xampp/htdocs/Proyecto/controller/homeController.php");
-    require_once("c://xampp/htdocs/Proyecto/homeDirectivo/codigo.php");
-
+    require_once("../controller/homeController.php");
+    require_once("../homeDirectivo/codigo.php");
+    
     $obj = new homeController();
 
     // Obtener los datos del fomrualario
@@ -28,7 +28,7 @@
                 $error .= "<li>El correo ya esta registrado</li>";
                 $cadena ="Location:singupMaestro.php?error=".$error."&&first_name=".$nombre."&&last_name=".$apellido."&&email=".$correo."&&codigoDirectivo=".$codigoDirectivo."&&password=".$contraseña."&&confirm_password=".$confirmarContraseña;
                 header($cadena);
-     }else{
+    }else{
                 header("Location:loginMaestro.php");
             }
         }else{
@@ -41,5 +41,5 @@
 
 
 
- 
+
 ?>

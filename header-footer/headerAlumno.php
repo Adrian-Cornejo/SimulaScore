@@ -31,19 +31,12 @@ if (!isset($_SESSION['usuario'])) {
     <a class="navbar-brand" href="#" style="font-size:3rem; padding:0.5rem; margin-left: 30rem;">
       <b>Simula</b>Score
     </a>
-    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="../panel_control.php" style="font-size:1.8rem; padding:1rem;">Home</a>
         </li>
       </ul>
-      <a href="../logout.php" class="boton" style="padding: 2rem; background-color:#687483; text-decoration: none; color: inherit;">
-        Cerrar sesión
-      </a>
+
     </div>
-  </div>
 </nav>
 

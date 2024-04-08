@@ -41,10 +41,8 @@
     <a class="navbar-brand" href="#" style="font-size:3rem; padding:0.5rem; margin-left: 15rem;">
       <b>Simula</b>Score
     </a>
-    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarScroll">
+
+
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#" style="font-size:1.8rem; padding:1rem;">Home</a>
@@ -53,7 +51,7 @@
       <a href="logoutDirectivo.php" class="boton" style="padding: 2rem; background-color:#687483; text-decoration: none; color: inherit;">
         Cerrar sesión
       </a>
-    </div>
+
   </div>
 </nav>
 
@@ -64,7 +62,10 @@
     <div class="contenedor__informacion">
         <h1>Bienvenido <?php echo htmlspecialchars($row['nombre']); ?> <?php echo htmlspecialchars($row['apellido']); ?></h1>
     </div>
-
+    <div class="controles-carrusel">
+    <button id="btnExamen1">Examen MEJOREDU </button>
+    <button id="btnExamen2">Examen Olimpiadas</button>
+</div>
     
     <div class="grid contenedor"> <!--Incio grid 2 columnas-->
 
@@ -103,88 +104,283 @@
         </div> <!--Fin de la primera columna-->
 
         <div class="segundaColumna"> <!--Incio segunda columna-->
+                
             
-            <div class="grid2columnas">
-            <div> <!--Contenedor card-->
-            <div class="card"> <!--Incio card-->
-                <a href="functionDirectivo/administrarDocentes.php">
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-book-open icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
-                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+            
+                <div id="examen1" class="contenedor-examen">
+                <div class="grid2columnas">
+    
+    
+    
+                <div> <!-- Contenedor card -->
+                    <div class="card1">
+                        <a href="functionDirectivo/administrarDocentes.php">
+                        <div class="no-image">
+                            <img src="../src/img/examen olimpiada del conocimiento.jpeg" alt="Logo" style="width: 300px; position:absolute; padding:1rem;">
+                            <svg
+                            class="icon"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            >
+                            <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.1"
+                                d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                            ></path>
                             </svg>
-                        </i>
-                        <p>Administrar progreso por docentes</p>  
+                        </div>
+                        <div class="content">
+                            <p class="name">Administrar progreso por docentes MEJOREDU</p>
+                            <p class="time"></p>
+                        </div>
+                        </a>
                     </div>
-                        <p class="card-content"></p>
-                </div>
-                </a>
-            </div> <!--Fin card-->
-            </div> <!--Fin contenedor card-->
-
-            <div> <!--Contenedor card-->
-            <div class="card"> <!--Incio card-->
-                <a href="functionDirectivo/verAlumnos.php">
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-book-open icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                            </svg>    
-                        </i>
-                        <p>Administrar progreso del alumno</p>
+                </div> <!-- Fin contenedor card -->
+    
+    
+                <div> <!-- Contenedor card -->
+                    <div class="card1">
+                        <a href="functionDirectivo/verAlumnos.php">
+                        <div class="no-image">
+                            <img src="../src/img/beneficios-estudiantes-min.jpg" alt="Logo" style="width: 300px; position:absolute; padding:1rem;">
+                            <svg
+                            class="icon"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            >
+                            <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.1"
+                                d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                            ></path>
+                            </svg>
+                        </div>
+                        <div class="content">
+                            <p class="name">Administrar progreso del alumno: MEJOREDU</p>
+                            <p class="time"></p>
+                        </div>
+                        </a>
                     </div>
-                        <p class="card-content"></p>
-                </div>
-                </a>
-            </div> <!--Fin card-->
-            </div> <!--Fin contenedor card-->
-            <div> <!--Contenedor card-->
-            <div class="card"> <!--Incio card-->
-                <a href="functionDirectivo/verExamenesProgesoDirectivo.php">
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-book-open icon"></i>
-                        <p>Ver examenes activos</p> 
+                </div> <!-- Fin contenedor card -->
+    
+                
+                <div> <!-- Contenedor card -->
+                    <div class="card1">
+                        <a href="functionDirectivo/verExamenesProgesoDirectivo.php">
+                        <div class="no-image">
+                            <img src="../src/img/Examen_Prueba_Enlace-2.jpg" alt="Logo" style="width: 300px; position:absolute; padding:1rem;">
+                            <svg
+                            class="icon"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            >
+                            <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.1"
+                                d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                            ></path>
+                            </svg>
+                        </div>
+                        <div class="content">
+                            <p class="name">Ver examenes activos MEJOREDU</p>
+                            <p class="time"></p>
+                        </div>
+                        </a>
                     </div>
-                        <p class="card-content"></p>
-                </div>
-                </a>
-            </div> <!--Fin card-->
-            </div> <!--Fin contenedor card-->
-            
-            <div> <!--Contenedor card-->
-            <div class="card"> <!--Incio card-->
-                <a href="#">
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-book-open icon"></i>
-                        <p>Funcion pendiete</p>
+                </div> <!-- Fin contenedor card -->
+    
+    
+                <div> <!-- Contenedor card -->
+                    <div class="card1">
+                        <a href="#">
+                        <div class="no-image">
+                            <img src="../src/img/grupo.jpeg" alt="Logo" style="width: 300px; position:absolute; padding:1rem;">
+                            <svg
+                            class="icon"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            >
+                            <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.1"
+                                d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                            ></path>
+                            </svg>
+                        </div>
+                        <div class="content">
+                            <p class="name">Funcion Pendiente</p>
+                            <p class="time"></p>
+                        </div>
+                        </a>
                     </div>
-                        <p class="card-content"></p>
+                </div> <!-- Fin contenedor card -->
+    
+    </div>
+    </div>
+    
+    
+    
+    
+                
+                <div id="examen2" class="contenedor-examen" style="display: none;">
+                <div class="grid2columnas">
+    
+                <div> <!-- Contenedor card -->
+                    <div class="card1">
+                        <a href="functionDirectivo/resultadosOlimpiada/administrarDocentesOlimpiada.php">
+                        <div class="no-image">
+                            <img src="../src/img/alumnosOlimpiada.jpg" alt="Logo" style="width: 300px; position:absolute; padding:1rem;">
+                            <svg
+                            class="icon"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            >
+                            <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.1"
+                                d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                            ></path>
+                            </svg>
+                        </div>
+                        <div class="content">
+                            <p class="name">Administrar Progreso por docentes:Olimpiada</p>
+                            <p class="time"></p>
+                        </div>
+                        </a>
+                    </div>
+                </div> <!-- Fin contenedor card -->
+    
+    
+                <div> <!-- Contenedor card -->
+                    <div class="card1">
+                        <a href="functionDirectivo/resultadosOlimpiada/verAlumnosOlimpiada.php">
+                        <div class="no-image">
+                            <img src="../src/img/olim.jpeg" alt="Logo" style="width: 300px; position:absolute; padding:1rem;">
+                            <svg
+                            class="icon"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            >
+                            <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.1"
+                                d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                            ></path>
+                            </svg>
+                        </div>
+                        <div class="content">
+                            <p class="name">Administrar progreso del alumno: Olimpiada</p>
+                            <p class="time"></p>
+                        </div>
+                        </a>
+                    </div>
+                </div> <!-- Fin contenedor card -->
+    
+                
+                <div> <!-- Contenedor card -->
+                    <div class="card1">
+                        <a href="functionDirectivo/resultadosOlimpiada/verExamenesProgresoDirectivoOlimpiada.php">
+                        <div class="no-image">
+                            <img src="../src/img/Examen_Prueba_Enlace-2.jpg" alt="Logo" style="width: 300px; position:absolute; padding:1rem;">
+                            <svg
+                            class="icon"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            >
+                            <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.1"
+                                d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                            ></path>
+                            </svg>
+                        </div>
+                        <div class="content">
+                            <p class="name">Ver Examenes en progreso: Olimpiada</p>
+                            <p class="time"></p>
+                        </div>
+                        </a>
+                    </div>
+                </div> <!-- Fin contenedor card -->
+    
+    
+                <div> <!-- Contenedor card -->
+                    <div class="card1">
+                        <a href="#">
+                        <div class="no-image">
+                            <img src="../src/img/grupo.jpg" alt="Logo" style="width: 300px; position:absolute; padding:1rem;">
+                            <svg
+                            class="icon"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            >
+                            <path
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.1"
+                                d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                            ></path>
+                            </svg>
+                        </div>
+                        <div class="content">
+                            <p class="name">Funcion pendiente</p>
+                            <p class="time"></p>
+                        </div>
+                        </a>
+                    </div>
+                </div> <!-- Fin contenedor card -->          
+    
                 </div>
-                </a>
-            </div> <!--Fin card-->
-            </div> <!--Fin contenedor card-->
-
-
-
-            </div>
-            </div>
-        </div><!--Fin de la segunda columna-->
+    
+            </div><!--Fin de la segunda columna-->
     </div> <!--Fin grid mayor-->
 
 
 
 
 </main>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("btnExamen1").addEventListener("click", function() {
+        document.getElementById("examen1").style.display = "block";
+        document.getElementById("examen2").style.display = "none";
+    });
 
+    document.getElementById("btnExamen2").addEventListener("click", function() {
+        document.getElementById("examen1").style.display = "none";
+        document.getElementById("examen2").style.display = "block";
+    });
+});
+</script>
 </body>
 </html>

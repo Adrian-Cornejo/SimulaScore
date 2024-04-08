@@ -168,10 +168,7 @@ $calificacionFce =$puntajeFCE;
     <a class="navbar-brand" href="../home/panel_control.php" style="font-size:3rem; padding:0.5rem; margin-left: 30rem;">
       <b>Simula</b>Score
     </a>
-    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarScroll">
+
       <ul class="navbar-nav me-auto my-2 my-lg-0 " >
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="../home/panel_control.php" style="font-size:1.8rem; padding:1rem;">Home</a>
@@ -181,7 +178,6 @@ $calificacionFce =$puntajeFCE;
         Cerrar sesión
       </a>
     </div>
-  </div>
 </nav>
 
 

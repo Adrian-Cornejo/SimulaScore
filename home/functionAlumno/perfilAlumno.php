@@ -45,10 +45,7 @@ $alumno = $sqlHelp->fetchAll(PDO::FETCH_ASSOC);
     <a class="navbar-brand" href="../panelControlMaestro.php" style="font-size:3rem; padding:0.5rem; margin-left: 15rem;">
       <b>Simula</b>Score
     </a>
-    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarScroll">
+
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="../panel_control.php" style="font-size:1.8rem; padding:1rem;">Home</a>
@@ -58,7 +55,6 @@ $alumno = $sqlHelp->fetchAll(PDO::FETCH_ASSOC);
         Cerrar sesión
       </a>
     </div>
-  </div>
 </nav>
 
 

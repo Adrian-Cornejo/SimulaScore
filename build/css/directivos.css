@@ -191,7 +191,6 @@ html {
 
 @media only screen and (min-width: 1440px){
   .grid{
-   
     display: grid;
     grid-template-columns:repeat(3,1fr );
     gap: 1rem;
@@ -429,8 +428,131 @@ button:hover {
 .image-upload-label:hover .profile-img {
   opacity: 0.3; /* Atenua la imagen */
 }
+.examen{
+  background-color: var(--primarioFuerte);
+  max-width: 50%;
+  
+  border-radius: 5px;
+  grid-column: 1/3;
+  margin: auto;
+padding:0 5rem;
+}
+.controles-carrusel {
+
+
+  max-width: 30%;
+  display: flex;
+  gap: 15px;
+  margin: auto;
+  margin-right: 15px;
+
+}
+
+.controles-carrusel button {
+  background-color: #687483; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin bordes */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  margin: 0 10px; /* Separación entre botones */
+  cursor: pointer; /* Cursor en forma de mano para indicar que es clickable */
+  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+.controles-carrusel button:hover {
+  background-color: #556270; /* Color de fondo al pasar el mouse por encima */
+}
+.controles-carrusel button:focus {
+  background-color: black;/* Color de fondo al pasar el mouse por encima */
+}
+.controles-carrusel button:focus {
+  outline: none; /* Elimina el borde que aparece al hacer clic en algunos navegadores */
+}
+
+.controles-carrusel button:active {
+  transform: scale(0.98); /* Efecto de presión al hacer clic */
+}
+.contenedorTabla {
+  max-width: 600px;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  margin: auto;
+  
+}
+.calificacion{
+  color: #000;
+  font-size: medium;
+  font-weight: 700;
+}
 
 
 
+.card1 {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 400px;
+  
+  padding: 8px;
+  background-color: #d9b29f;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: auto;
+}
+@media only screen and (min-width: 768px){
+   .card1{
+    margin-bottom: 10px;
+   }
+}
 
+.card1 .no-image {
+  border: 2px dashed #373737;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  aspect-ratio: 16/8;
+}
 
+.card1 .no-image .icon {
+  width: 60px;
+  color: #373737;
+}
+
+.card1 .image {
+  width: 100%;
+  aspect-ratio: 16/8;
+}
+
+.card1 .image .picture {
+  border-radius: 8px;
+  width: inherit;
+  aspect-ratio: 16/8;
+}
+
+.card1 .content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 12px;
+  padding-left: 4px;
+}
+
+.card1 .content .name {
+  font-size: 2.5rem;
+  color: var(--negro);
+  margin: 0;
+}
+
+.card1 .content .time {
+  font-size: 1.5rem;
+  color: var(--negro);
+}
+
+.card1:hover {
+  -webkit-box-shadow: 0px 0px 15px -8px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 0px 15px -8px rgba(66, 68, 90, 1);
+  box-shadow: 0px 0px 15px -8px rgba(66, 68, 90, 1);
+}

@@ -288,7 +288,7 @@ body {
   /*Contenido adicional del examen*/
   .question-image {
     display: block;
-    max-width: 50%; /* Asegura que la imagen no exceda el ancho de su contenedor */
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho de su contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
     margin: 0 auto; /* Centra la imagen horizontalmente */
     margin-bottom: 15px;

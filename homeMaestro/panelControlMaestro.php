@@ -1,11 +1,9 @@
 <?php
-  
-   session_start();
-  
+session_start();
 
 
     require '../config/db.php';
-   
+
     $db = new db();
     $con =$db->conexion();
 
@@ -39,26 +37,23 @@
 <body>
 
 <nav class="navbar navbar-expand-lg" style="padding: 1rem; background-color:#e2c4b6">
-  <img src="../src/img/Logo-removebg-preview.png" alt="Logo" style="width: 100px; position:absolute; padding:1rem;">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#" style="font-size:3rem; padding:0.5rem; margin-left: 15rem;">
-      <b>Simula</b>Score
-    </a>
-    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" style="font-size:1.8rem; padding:1rem;">Home</a>
-        </li>
-      </ul>
-      <a href="logoutMaestro.php" class="boton" style="padding: 2rem; background-color:#687483; text-decoration: none; color: inherit;">
-        Cerrar sesión
-      </a>
+    <img src="../src/img/Logo-removebg-preview.png" alt="Logo" style="width: 100px; position:absolute; padding:1rem;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="font-size:3rem; padding:0.5rem; margin-left: 15rem;">
+            <b>Simula</b>Score
+        </a>
+            <ul class="navbar-nav me-auto my-2 my-lg-0 " style="--bs-scroll-height: 100px;">
+                <li class="">
+                    <a class="nav-link active" aria-current="page" href="#" style=" font-size:2rem; padding:1rem;">Home</a>
+                </li>
+            </ul>
+            <a href="logoutMaestro.php" class="boton" style="padding: 2rem; background-color:#687483; text-decoration: none; color: inherit;">
+                Cerrar sesión
+            </a>
+        
     </div>
-  </div>
 </nav>
+
 
 
 <!-- Main Content -->
@@ -68,7 +63,14 @@
         <h1>Bienvenido <?php echo htmlspecialchars($row['nombre']); ?> <?php echo htmlspecialchars($row['apellido']); ?></h1>
     </div>
 
-    
+    <!-- Botones para cambiar entre secciones -->
+<div class="controles-carrusel">
+    <button id="btnExamen1">Examen MEJOREDU </button>
+    <button id="btnExamen2">Examen Olimpiadas</button>
+</div>
+
+
+
     <div class="grid contenedor"> <!--Incio grid 2 columnas-->
 
         <div>
@@ -106,81 +108,264 @@
         </div> <!--Fin de la primera columna-->
 
         <div class="segundaColumna"> <!--Incio segunda columna-->
+                
             
+            
+            <div id="examen1" class="contenedor-examen">
             <div class="grid2columnas">
-            <div> <!--Contenedor card-->
-            <div class="card"> <!--Incio card-->
-                <a href="functionMaestro/administrarAlumnos.php">
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-book-open icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
-                            <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
-                            </svg>
-                        </i>
-                        <p>Administrar alumnos </p>  
-                    </div>
-                        <p class="card-content"></p>
-                </div>
-                </a>
-            </div> <!--Fin card-->
-            </div> <!--Fin contenedor card-->
 
-            <div> <!--Contenedor card-->
-            <div class="card"> <!--Incio card-->
-                <a href="functionMaestro/verExamenesRealizados.php">
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-book-open icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                            </svg>    
-                        </i>
-                        <p>Ver examenes Realizados</p>
+
+
+            <div> <!-- Contenedor card -->
+                <div class="card1">
+                    <a href="functionMaestro/administrarAlumnos.php">
+                    <div class="no-image">
+                        <img src="../src/img/examen olimpiada del conocimiento.jpeg" alt="Logo" style="width: 300px; position:absolute; padding:1rem;">
+                        <svg
+                        class="icon"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        >
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.1"
+                            d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                        ></path>
+                        </svg>
                     </div>
-                        <p class="card-content"></p>
-                </div>
-                </a>
-            </div> <!--Fin card-->
-            </div> <!--Fin contenedor card-->
-            <div> <!--Contenedor card-->
-            <div class="card"> <!--Incio card-->
-                <a href="functionMaestro/verExamenesProgreso.php">
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-book-open icon"></i>
-                        <p>Ver Examenes en progreso</p>
+                    <div class="content">
+                        <p class="name">Administrar Alumnos: MEJOREDU</p>
+                        <p class="time">Podrás observar el progreso individual de cada alumno</p>
                     </div>
-                        <p class="card-content"></p>
+                    </a>
                 </div>
-                </a>
-            </div> <!--Fin card-->
-            </div> <!--Fin contenedor card-->
+            </div> <!-- Fin contenedor card -->
+
+
+            <div> <!-- Contenedor card -->
+                <div class="card1">
+                    <a href="functionMaestro/verExamenesRealizados.php">
+                    <div class="no-image">
+                        <img src="../src/img/beneficios-estudiantes-min.jpg" alt="Logo" style="width: 300px; position:absolute; padding:1rem;">
+                        <svg
+                        class="icon"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        >
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.1"
+                            d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                        ></path>
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <p class="name">Buscar examenes Realizados: MEJOREDU</p>
+                        <p class="time">Podrás buscar los examenes realizados por el Alumnos</p>
+                    </div>
+                    </a>
+                </div>
+            </div> <!-- Fin contenedor card -->
+
             
-            <div> <!--Contenedor card-->
-            <div class="card"> <!--Incio card-->
-                <a href="functionMaestro/verProgresoGrupo.php">
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fas fa-book-open icon"></i>
-                        <p>Ver progreso por grupo</p>
+            <div> <!-- Contenedor card -->
+                <div class="card1">
+                    <a href="functionMaestro/verExamenesProgreso.php">
+                    <div class="no-image">
+                        <img src="../src/img/Examen_Prueba_Enlace-2.jpg" alt="Logo" style="width: 300px; position:absolute; padding:1rem;">
+                        <svg
+                        class="icon"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        >
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.1"
+                            d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                        ></path>
+                        </svg>
                     </div>
-                        <p class="card-content"></p>
+                    <div class="content">
+                        <p class="name">Ver Examenes en progreso: MEJOREDU</p>
+                        <p class="time">Podrás observar los examenes en progreso</p>
+                    </div>
+                    </a>
                 </div>
-                </a>
-            </div> <!--Fin card-->
-            </div> <!--Fin contenedor card-->
+            </div> <!-- Fin contenedor card -->
 
 
+            <div> <!-- Contenedor card -->
+                <div class="card1">
+                    <a href="functionMaestro/verProgresoGrupo.php">
+                    <div class="no-image">
+                        <img src="../src/img/grupo.jpeg" alt="Logo" style="width: 300px; position:absolute; padding:1rem;">
+                        <svg
+                        class="icon"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        >
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.1"
+                            d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                        ></path>
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <p class="name">Ver progreso por grupo: MEJOREDU</p>
+                        <p class="time">Podrás observar el progreso por grupo</p>
+                    </div>
+                    </a>
+                </div>
+            </div> <!-- Fin contenedor card -->
+
+</div>
+</div>
+
+
+
+
+            
+            <div id="examen2" class="contenedor-examen" style="display: none;">
+            <div class="grid2columnas">
+
+            <div> <!-- Contenedor card -->
+                <div class="card1">
+                    <a href="functionMaestro/resultadosOlimpiada/administrarAlumnosOlimpiada.php">
+                    <div class="no-image">
+                        <img src="../src/img/alumnosOlimpiada.jpg" alt="Logo" style="width: 300px; position:absolute; padding:1rem;">
+                        <svg
+                        class="icon"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        >
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.1"
+                            d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                        ></path>
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <p class="name">Administrar Alumnos:Olimpiada</p>
+                        <p class="time">Podrás observar el progreso individual del examen de OLimpiada</p>
+                    </div>
+                    </a>
+                </div>
+            </div> <!-- Fin contenedor card -->
+
+
+            <div> <!-- Contenedor card -->
+                <div class="card1">
+                    <a href="functionMaestro/resultadosOlimpiada/verExamenesRealizados.php">
+                    <div class="no-image">
+                        <img src="../src/img/olim.jpeg" alt="Logo" style="width: 300px; position:absolute; padding:1rem;">
+                        <svg
+                        class="icon"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        >
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.1"
+                            d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                        ></path>
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <p class="name">Buscar examenes Realizados: Olimpiada</p>
+                        <p class="time">Podrás buscar los examenes realizados por el Alumnos</p>
+                    </div>
+                    </a>
+                </div>
+            </div> <!-- Fin contenedor card -->
+
+            
+            <div> <!-- Contenedor card -->
+                <div class="card1">
+                    <a href="functionMaestro/resultadosOlimpiada/verExamenesProgresoOlimpiada.php">
+                    <div class="no-image">
+                        <img src="../src/img/Examen_Prueba_Enlace-2.jpg" alt="Logo" style="width: 300px; position:absolute; padding:1rem;">
+                        <svg
+                        class="icon"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        >
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.1"
+                            d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                        ></path>
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <p class="name">Ver Examenes en progreso: Olimpiada</p>
+                        <p class="time">Podrás observar los examenes en progreso</p>
+                    </div>
+                    </a>
+                </div>
+            </div> <!-- Fin contenedor card -->
+
+
+            <div> <!-- Contenedor card -->
+                <div class="card1">
+                    <a href="functionMaestro/resultadosOlimpiada/verProgresoGrupoOlimpiada.php">
+                    <div class="no-image">
+                        <img src="../src/img/grupo.jpg" alt="Logo" style="width: 300px; position:absolute; padding:1rem;">
+                        <svg
+                        class="icon"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        >
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="1.1"
+                            d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+                        ></path>
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <p class="name">Ver progreso por grupo: Olimpiada</p>
+                        <p class="time">Podrás observar el progreso por grupo</p>
+                    </div>
+                    </a>
+                </div>
+            </div> <!-- Fin contenedor card -->          
 
             </div>
-            </div>
+
         </div><!--Fin de la segunda columna-->
     </div> <!--Fin grid mayor-->
 
@@ -188,6 +373,20 @@
 
 
 </main>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("btnExamen1").addEventListener("click", function() {
+        document.getElementById("examen1").style.display = "block";
+        document.getElementById("examen2").style.display = "none";
+    });
+
+    document.getElementById("btnExamen2").addEventListener("click", function() {
+        document.getElementById("examen1").style.display = "none";
+        document.getElementById("examen2").style.display = "block";
+    });
+});
+</script>
+
 
 </body>
 </html>

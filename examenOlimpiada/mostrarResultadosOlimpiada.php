@@ -94,7 +94,7 @@ $tablaRespuestas = 'resp_correctas_olimp'; // Asume que esta es tu tabla de resp
 
     $resultadosMatematicas = evaluarRespuestas($respuestasMatematicas, $tablaRespuestas, $con);
     $totalPreguntasMatematicas = $resultadosMatematicas['totalPreguntas'];
-    echo $totalPreguntasCorrectasMatematicas = $resultadosMatematicas['respuestasCorrectas'];
+    $totalPreguntasCorrectasMatematicas = $resultadosMatematicas['respuestasCorrectas'];
     $respuestasIncorrectasMatematicas = $resultadosMatematicas['preguntasIncorrectas'];
 
     // Evaluar respuestas de Español
@@ -176,10 +176,7 @@ $calificacionGeografia = $puntajeGeografia;
     <a class="navbar-brand" href="../home/panel_control.php" style="font-size:3rem; padding:0.5rem; margin-left: 30rem;">
       <b>Simula</b>Score
     </a>
-    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarScroll">
+
       <ul class="navbar-nav me-auto my-2 my-lg-0 " >
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="../home/panel_control.php" style="font-size:1.8rem; padding:1rem;">Home</a>
@@ -189,7 +186,6 @@ $calificacionGeografia = $puntajeGeografia;
         Cerrar sesión
       </a>
     </div>
-  </div>
 </nav>
 
 
@@ -215,7 +211,7 @@ function mostrarResultadoExamen($puntaje, $totalPreguntasCorrectas, $totalPregun
     echo '<div class="resultado ' . $clase . '">';
    
     echo '<h3 style="color:white;">' . $mensaje . '</h3>';
-    echo '<p>Tu puntaje es: ' . $puntaje . '</p>';
+    echo '<p>Tu puntaje es: ' . number_format($puntaje, 2) . '</p>';
     echo '<p>Respondiste correctamente ' . $totalPreguntasCorrectas . ' de ' . $totalPreguntas . ' preguntas.</p>';
     echo '</div>';
     echo '</div>';
